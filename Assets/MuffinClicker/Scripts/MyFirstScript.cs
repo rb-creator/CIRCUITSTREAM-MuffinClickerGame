@@ -9,12 +9,18 @@ public class MyFirstScript : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI _totalMuffinsText;
+ 
     [SerializeField]
     private int _counter = 0;
+
     [SerializeField]
-    private int _criticalClicks = 10;
+    private int _muffinsPerClick = 1;
+
     [SerializeField]
-    private float _probabilityFactor = 0.01f;
+    private int _bonusClicks = 10;
+    
+    [SerializeField]
+    private float _criticalChance = 0.01f;
 
     // Start is called before the first frame update
     private void Start()
@@ -31,13 +37,15 @@ public class MyFirstScript : MonoBehaviour
 
     public void OnMuffinClicked()
     {
-        if (Random.value < _probabilityFactor)
+        if (Random.value <= _criticalChance)
         {
-            _counter = _counter + _criticalClicks;
+            //Critical Hit
+            _counter = _counter + (_muffinsPerClick * _bonusClicks);
             Debug.Log("Critical Hit!");
         }
         else
         {
+            //Normal Hit
             _counter = _counter + 1;
             //Debug.Log("Plus 1");
         }
