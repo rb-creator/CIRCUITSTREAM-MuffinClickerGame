@@ -1,9 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+
 
 public class MyFirstScript : MonoBehaviour
 {
+
+
+    [SerializeField]
     private int _counter = 0;
 
     // Start is called before the first frame update
