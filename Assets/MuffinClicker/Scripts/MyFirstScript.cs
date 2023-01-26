@@ -1,10 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 
 public class MyFirstScript : MonoBehaviour
 {
-
+    TextMeshProUGUI m_TextMeshProUGUI;
 
     [SerializeField]
     private int _counter = 0;
